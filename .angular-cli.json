@@ -10,6 +10,7 @@
             "assets": [
                 "assets",
                 "favicon.ico",
+                "cordova.js",
                 "web.config"
             ],
             "index": "index.html",
@@ -17,7 +18,6 @@
             "polyfills": "polyfills.ts",
             "tsconfig": "tsconfig.app.json",
             "testTsconfig": "tsconfig.spec.json",
-            "serviceWorker": true,
             "prefix": "app",
             "styles": [
                 "styles/ui-kit/ui-kit.scss",
@@ -27,7 +27,8 @@
             "environmentSource": "environments/environment.ts",
             "environments": {
                 "dev": "environments/environment.ts",
-                "hmr": "environments/environment.hmr.ts",
+                "mobile": "environments/environment.mobile.ts",
+                "desktop": "environments/environment.desktop.ts",
                 "prod": "environments/environment.prod.ts"
             }
         }
