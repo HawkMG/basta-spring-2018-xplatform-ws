@@ -2,7 +2,8 @@
   "compileOnSave": false,
   "compilerOptions": {
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
+      "node_modules"
     ],
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
