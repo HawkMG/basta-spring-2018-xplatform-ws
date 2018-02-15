@@ -5,6 +5,7 @@ import {fromPromise} from 'rxjs/observable/fromPromise';
 import {pluck} from 'rxjs/operators/pluck';
 import {switchMap} from 'rxjs/operators/switchMap';
 import {ITodoItem} from '../../../shared/models/contracts/todoItem.interface';
+import {CameraService} from '../../../shared/services/base/camera.service';
 import {TodoService} from '../../../shared/services/base/todo.service';
 
 @Component({
@@ -12,8 +13,10 @@ import {TodoService} from '../../../shared/services/base/todo.service';
 })
 export class TodoDetailComponent implements OnInit {
     public todoItem$: Observable<ITodoItem>;
+    public image$: Observable<string>;
 
-    constructor(private readonly _activatedRoute: ActivatedRoute, private readonly _todoService: TodoService) {
+    constructor(private readonly _activatedRoute: ActivatedRoute, private readonly _todoService: TodoService,
+                private readonly _cameraService: CameraService) {
     }
 
     public ngOnInit(): void {
@@ -21,5 +24,9 @@ export class TodoDetailComponent implements OnInit {
             pluck('id'),
             switchMap((id: string) => fromPromise(this._todoService.get(id)))
         );
+    }
+
+    public getPicture(): void {
+        this.image$ = this._cameraService.getPicture();
     }
 }

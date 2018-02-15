@@ -3,10 +3,10 @@
         <h1>{{ todoItem.text }}</h1>
     </header>
     <div class="content">
-        Hello
+        <img *ngIf="image$ | async as image" [src]="image">
     </div>
 
-    <button class="tt__fab" (click)="createItem()">
-        add
+    <button class="tt__fab" (click)="getPicture()">
+        camera_alt
     </button>
 </div>

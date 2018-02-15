@@ -10,14 +10,15 @@ export class WebCameraService extends CameraService {
     }
 
     private getMediaDevices(): any {
-        return ((this._window.navigator['mozGetUserMedia'] || this._window.navigator['webkitGetUserMedia']) ? {
+        const navigator = this._window.navigator;
+        return ((navigator['mozGetUserMedia'] || navigator['webkitGetUserMedia']) ? {
             getUserMedia: function (options) {
                 return new Promise((resolve, reject) => {
-                    (this._window.navigator['mozGetUserMedia'] ||
-                        this._window.navigator['webkitGetUserMedia']).call(this._window.navigator, options, resolve, reject);
+                    (navigator['mozGetUserMedia'] ||
+                        navigator['webkitGetUserMedia']).call(navigator, options, resolve, reject);
                 });
             }
-        } : null) || this._window.navigator.mediaDevices;
+        } : null) || navigator.mediaDevices;
     }
 
     public getPicture(): Observable<string> {
