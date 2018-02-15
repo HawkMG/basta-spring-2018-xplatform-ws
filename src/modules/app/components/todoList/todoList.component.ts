@@ -3,7 +3,7 @@ import {
     ViewChildren
 } from '@angular/core';
 import {ITodoItem} from '../../../shared/models/contracts/todoItem.interface';
-import {ShareService} from '../../../shared/services/share.service';
+import {ShareService} from '../../../shared/services/base/share.service';
 import {NotificationService} from '../../../shared/services/notification.service';
 import {TodoItem} from '../../../shared/models/todoItem.model';
 import {ActivatedRoute, Router} from '@angular/router';

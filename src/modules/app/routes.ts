@@ -1,5 +1,6 @@
 import {Routes} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
+import {TodoDetailComponent} from './components/todoDetail/todoDetail.component';
 
 export const ROUTES: Routes = [
     {
@@ -10,6 +11,13 @@ export const ROUTES: Routes = [
     {
         path: 'home/:id',
         component: HomeComponent,
+        data: {
+            title: 'Thinktecture Todo',
+        },
+    },
+    {
+        path: 'detail/:id',
+        component: TodoDetailComponent,
         data: {
             title: 'Thinktecture Todo',
         },

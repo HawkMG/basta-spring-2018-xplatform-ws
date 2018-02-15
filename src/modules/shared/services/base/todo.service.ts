@@ -16,6 +16,10 @@ export class TodoService {
         return this.table.filter(item => !item.deleted).reverse().toArray();
     }
 
+    public async get(id: string): Promise<ITodoItem> {
+        return (await this.table.filter(item => item.syncId === id && !item.deleted).toArray())[0];
+    }
+
     public add(item: ITodoItem): Promise<number> {
         return this.table.put(item);
     }

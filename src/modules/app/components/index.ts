@@ -1,5 +1,6 @@
 import {RootComponent} from './root/root.component';
 import {HomeComponent} from './home/home.component';
+import {TodoDetailComponent} from './todoDetail/todoDetail.component';
 import {TodoListComponent} from './todoList/todoList.component';
 import {MenuComponent} from './menu/menu.component';
 import {HeaderComponent} from './header/header.component';
@@ -10,4 +11,5 @@ export const APP_COMPONENTS = [
     MenuComponent,
     HeaderComponent,
     TodoListComponent,
+    TodoDetailComponent,
 ];
