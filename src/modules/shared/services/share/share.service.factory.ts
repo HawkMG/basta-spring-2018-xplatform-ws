@@ -1,4 +1,4 @@
-import {environment} from '../../../../environments/environment.mobile';
+import {environment} from '../../../../environments/environment';
 import {BrowserFeatureKey} from '../../models/browserFeatureKey.model';
 import {FeatureService} from '../feature.service';
 import {WINDOW} from '../window.token';
