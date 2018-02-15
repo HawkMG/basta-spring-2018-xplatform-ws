@@ -8,4 +8,10 @@ if (environment.production) {
     enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+const bootstrap = () => platformBrowserDynamic().bootstrapModule(AppModule);
+
+if (environment.mobile) {
+    document.addEventListener('deviceready', bootstrap);
+} else {
+    bootstrap();
+}
