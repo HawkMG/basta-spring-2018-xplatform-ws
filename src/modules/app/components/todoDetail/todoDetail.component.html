@@ -1,0 +1,12 @@
+<div class="tt__card" *ngIf="todoItem$ | async as todoItem">
+    <header>
+        <h1>{{ todoItem.text }}</h1>
+    </header>
+    <div class="content">
+        Hello
+    </div>
+
+    <button class="tt__fab" (click)="createItem()">
+        add
+    </button>
+</div>

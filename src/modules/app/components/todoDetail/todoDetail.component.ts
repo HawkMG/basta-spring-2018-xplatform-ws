@@ -8,7 +8,7 @@ import {ITodoItem} from '../../../shared/models/contracts/todoItem.interface';
 import {TodoService} from '../../../shared/services/base/todo.service';
 
 @Component({
-    template: 'Hello item: {{ todoItem$ | async | json }}'
+    templateUrl: './todoDetail.component.html'
 })
 export class TodoDetailComponent implements OnInit {
     public todoItem$: Observable<ITodoItem>;
