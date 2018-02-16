@@ -16,11 +16,15 @@ export class TodoDetailComponent implements OnInit {
     public todoItem$: Observable<ITodoItem>;
     public image$: Observable<string>;
 
-    constructor(/* TODO: Inject ActivatedRoute and TodoService */) {
+    constructor(private readonly _activatedRoute: ActivatedRoute, private readonly _todoService: TodoService,
+                /* TODO: Inject CameraService */ private readonly _changeDetectorRef: ChangeDetectorRef) {
     }
 
     public ngOnInit(): void {
-        // TODO
+        this.todoItem$ = this._activatedRoute.params.pipe(
+            pluck('id'),
+            switchMap((id: string) => fromPromise(this._todoService.get(id)))
+        );
     }
 
     public getPicture(): void {
