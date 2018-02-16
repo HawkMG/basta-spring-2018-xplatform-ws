@@ -10,13 +10,6 @@ export const ROUTES: Routes = [
     },
     {
         path: 'home/:id',
-        component: HomeComponent,
-        data: {
-            title: 'Thinktecture Todo',
-        },
-    },
-    {
-        path: 'detail/:id',
         component: TodoDetailComponent,
         data: {
             title: 'Thinktecture Todo',
