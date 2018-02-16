@@ -61,3 +61,11 @@ router-outlet + ng-component {
         color: #F3F9FF;
     }
 }
+
+.content {
+    &.camera-image {
+        img {
+            max-width: 100%;
+        }
+    }
+}

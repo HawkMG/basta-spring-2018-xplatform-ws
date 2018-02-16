@@ -2,6 +2,7 @@ import {Inject} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {CameraService} from '../base/camera.service';
 import {WINDOW} from '../window.token';
+import {normalizeURL} from 'ionic-angular/util/util';
 
 export class MobileCameraService extends CameraService {
     constructor(@Inject(WINDOW) private readonly _window: Window) {
@@ -28,7 +29,7 @@ export class MobileCameraService extends CameraService {
 
                 camera.getPicture(imageData => {
                     // removeDomListener();
-                    subscriber.next(imageData);
+                    subscriber.next(normalizeURL(imageData));
                     subscriber.complete();
                 }, error => {
                     // removeDomListener();
