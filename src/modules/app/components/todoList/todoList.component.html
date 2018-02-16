@@ -11,7 +11,7 @@
                        (focus)="onFocusItem(item, i)" (blur)="leaveEditMode(i, false)">
             </div>
             <div class="actions" *ngIf="activeItemIndex === i">
-                <button type="button" class="icon" [routerLink]="['/detail', item.syncId]" [class.disabled]="!item.syncId">
+                <button type="button" class="icon" [routerLink]="['/home', item.syncId]" [class.disabled]="!item.syncId">
                     <i class="material-icons">chat_bubble</i>
                 </button>
                 <button type="button" class="icon" (click)="shareItem(item)" [class.disabled]="!item.syncId">
